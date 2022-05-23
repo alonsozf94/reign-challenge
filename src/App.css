@@ -1,46 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
 .App {
   text-align: center;
 }
 
 .header {
-  background-color: #282c34;
+  height: 114px;
+  background: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+  box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
 }
 
-/* Article List */
+/* Framework select */
+.dropdown-container {
+  margin: 63px 0 38px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.frameworks {
+  width: 240px;
+  height: 32px;
+  padding: 5px 12px;
+  background-color: #fff;
+  border: 1px solid #2e2e2e;
+  border-radius: 4px;
+}
 
-.article-list {
+/* Stories */
+
+.story-list {
+  margin-top: 50px;
+  padding: 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
   list-style: none;
 }
-.article {
-  width: 500px;
+.story {
+  width: 550px;
+  min-height: 90px;
+  margin: 0 40px 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 15px;
-  border: 1px solid gray;
-  border-radius: 8px;
+  border: 1px solid #979797;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
 }
-.article-content {
+.story-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  padding: 26px 0 22px 26px;
 }
-.article-info {
+.story-info {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-.article-desc {
+.story-info span {
+  font-size: 11px;
+  color: #767676;
+}
+.story-desc {
   text-align: left;
+  font-weight: 500;
+  color: #6b6b6b;
+}
+.story-favorite {
+  height: 100%;
+  width: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(96, 96, 96, 0.06);
+}
+.story-favorite .icon-container {
+  line-height: 0;
+  cursor: pointer;
+}
+
+/* Helpers */
+.centered {
+  padding: 0 150px;
 }
