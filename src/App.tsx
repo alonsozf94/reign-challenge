@@ -38,7 +38,7 @@ function App() {
         setFavorites([...favorites, value.slice(6)]);
       }
     }
-  }, [])
+  })
 
   // Function to change dropdown
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
