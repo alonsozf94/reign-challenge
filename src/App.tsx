@@ -25,20 +25,24 @@ function App() {
     return data.hits
   }
 
-  // Do on first load
-  useEffect(() => {
-    const getStories = async () => {
-      setStories(await fetchNews('angular',0));
-    }
-    getStories()
-
+  function initializeFavorites() {
     for (let i = 0; i < window.localStorage.length; i++) {
       const value = window.localStorage.key(i)
       if (value !== null && value.substring(0, 6) === "story_") {
         setFavorites([...favorites, value.slice(6)]);
       }
     }
-  })
+  }
+
+  // Do on first load
+  useEffect(() => {
+    const getStories = async () => {
+      setStories(await fetchNews('angular', 0));
+      initializeFavorites()
+    }
+    getStories()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Function to change dropdown
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
